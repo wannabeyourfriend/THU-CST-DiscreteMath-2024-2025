@@ -26,7 +26,6 @@ def shakeSpeare(filename):
 def powSet(S):
     """
     powSet({1,2})的返回结果将为{frozenset(), frozenset({2}), frozenset({1}), frozenset({1, 2})}。
-    采用递归的方式完成这道题目
     """
     if not S:
         return {frozenset()}
