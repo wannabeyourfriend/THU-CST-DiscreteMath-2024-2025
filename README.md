@@ -4,15 +4,15 @@
 
 ### Project
 
-2024fall离散数学（1）的加分项目要求利用王浩算法实现一个命题逻辑自动推理证明系统，具体实现见仓库
+2024fall离散数学（1）的课程project要求利用王浩算法实现一个命题逻辑自动推理证明系统，实现在仓库
 
 [Wanghao-algorithm-Lab](https://github.com/wannabeyourfriend/Wanghao-algorithm-Lab)
 
 ### Labs
 
-咕，等待更新
+离散（1）数理逻辑和集合论，完成了头歌实验教学平台的**Lab-1**，个人觉得Lab质量较高，做完之后会对集合、关系有更深刻的思考。
 
-
+离散（2），5个图论的Lab，课程结束后将开源。
 
 ### 清华大学学生纪律处分管理规定实施细则
 
