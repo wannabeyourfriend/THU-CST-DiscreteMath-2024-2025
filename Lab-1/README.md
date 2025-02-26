@@ -243,4 +243,49 @@ def foldn2(init, h):
      end if
     ```
 
+    源代码
     
+    ```python
+    def findNomap(A, f):
+        for a in A:
+            mapped = False
+            for m in f:
+                if m[1] == a:
+                    mapped = True
+                    break
+            if mapped == False:
+                return a
+        return None
+    
+    def mapping(A, f):
+        if len(A) == 0:
+            return None
+        if len(A) == 1:
+            return A
+        unmapped_element = findNomap(A, f)
+        if unmapped_element is not None:
+            for m in f:
+                if m[0] == unmapped_element:
+                    f.remove(m)
+            A.remove(unmapped_element)
+            return mapping(A, f)
+        return A
+    ```
+    
+    
+
+- 写错好几次的`selectsort`
+
+  ```python
+  def SelectSort(seq, i):
+      if i == 0:
+          return
+      max_j = i
+      for j in range(i):
+          if seq[j] > seq[max_j]:
+              max_j = j
+      seq[i], seq[max_j] = seq[max_j], seq[i]
+      SelectSort(seq, i - 1)
+  ```
+
+  

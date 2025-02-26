@@ -1,7 +1,6 @@
 from random import *
 
 
-# 第一题
 def findNomap(A, f):
     for a in A:
         mapped = False
@@ -15,47 +14,55 @@ def findNomap(A, f):
 
 
 def mapping(A, f):
+    if len(A) == 0:
+        return None
+    if len(A) == 1:
+        return A
+    unmapped_element = findNomap(A, f)
+    if unmapped_element is not None:
+        for m in f:
+            if m[0] == unmapped_element:
+                f.remove(m)
+        A.remove(unmapped_element)
+        return mapping(A, f)
+    return A
 
 
-# 请在下面编写代码
-# **********  Begin  **********#
-
-# **********  End  **********#
-# 请不要修改下面的代码
-
-
-# 第二题
 def InsertSort(seq, i):
+    if i <= 0:
+        return
+
+    InsertSort(seq, i - 1)
+
+    key = seq[i]
+    j = i - 1
+    while j >= 0 and seq[j] > key:
+        seq[j + 1] = seq[j]
+        j -= 1
+    seq[j + 1] = key
 
 
-# 请在下面编写代码
-# **********  Begin  **********#
-
-# **********  End  **********#
-# 请不要修改下面的代码
-
-
-# 第三题
 def SelectSort(seq, i):
+    if i == 0:
+        return
+
+    max_j = i
+    for j in range(i):
+        if seq[j] > seq[max_j]:
+            max_j = j
+    seq[i], seq[max_j] = seq[max_j], seq[i]
+
+    SelectSort(seq, i - 1)
 
 
-# 请在下面编写代码
-# **********  Begin  **********#
-
-# **********  End  **********#
-
-# 请不要修改下面的代码
-
-
-# 第四题
 def QuickSort(seq):
-
-
-# 请在下面编写代码
-# **********  Begin  **********#
-
-# **********  End  **********#
-# 请不要修改下面的代码
+    if len(seq) <= 1:
+        return seq
+    pivot = seq[len(seq) // 2]
+    left = [x for x in seq if x < pivot]
+    middle = [x for x in seq if x == pivot]
+    right = [x for x in seq if x > pivot]
+    return QuickSort(left) + middle + QuickSort(right)
 
 
 if __name__ == "__main__":

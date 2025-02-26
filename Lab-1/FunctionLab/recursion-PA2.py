@@ -1,13 +1,8 @@
-# 第一题
 def isPal(s):
-    # 请在下面编写代码
     return s == s[::-1]
-    # 请不要修改下面的代码
 
 
-# 第二题
 def koch(n):
-    # 请在下面编写代码
     if n == 0:
         return "F"  # 0阶时直接画一条线
     else:
@@ -18,9 +13,7 @@ def koch(n):
     # 请不要修改下面的代码
 
 
-# 第三题
 def vowel(s):
-    # 请在下面编写代码
     s = s.lower()
     yset = set()
     yset.add('a')
@@ -38,19 +31,13 @@ def vowel(s):
     # 请不要修改下面的代码
 
 
-# 第四题
 def squareSum(n):
-    # 请在下面编写代码
-    # **********  Begin  **********#
     if n == 0:
         return 0
     else:
         return n * n + squareSum(n - 1)
-    # **********  End  **********#
-    # 请不要修改下面的代码
 
 
-# 第五题
 def vonNeumann(n):
     if n == 0:
         return "{}"
@@ -61,7 +48,6 @@ def vonNeumann(n):
         return "{" + ", ".join(result) + "}"
 
 
-# 第六题
 def perm(s):
     if len(s) == 0:
         return {""}  # 使用集合以避免重复
@@ -73,8 +59,6 @@ def perm(s):
             for sub_permutation in perm(remaining_chars):
                 result.add(current_char + sub_permutation)
         return sorted(list(result))
-    # **********  End  **********#
-    # 请不要修改下面的代码
 
 
 if __name__ == "__main__":
