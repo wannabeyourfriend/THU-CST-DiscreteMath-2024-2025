@@ -151,4 +151,43 @@ class Relation(object):
                         changed = True
         return Relation(self.sets, transitiveClosure_relation)
 
+    def __warshall(self, adj_matrix):
+        assert (len(row) == len(adj_matrix) for row in adj_matrix)
+        n = len(adj_matrix)
+        for k in range(n):
+            for i in range(n):
+                for j in range(n):
+                    adj_matrix[i][j] = adj_matrix[i][j] or (adj_matrix[i][k] and adj_matrix[k][j])
+
+        return adj_matrix
+def isEquivalenceRelation(rel):
+    #该函数对给定的Relation对象rel，判断其是否为等价关系
+    #是则返回True，否则返回False
+    if rel.isReflexive() and rel.isSymmetric() and rel.isTransitive():
+        return True
+    else:
+        return False
+
+def find_equivalence_class(a, relation):
+    eq_class = []
+    for element in relation.sets:
+        if (a, element) in relation.rel or (element, a) in relation.rel:
+            eq_class.append(element)
+    return eq_class
+
+def createPartition(rel):
+    #对给定的Relation对象rel，求其决定的rel.sets上的划分
+    #如果rel不是等价关系，返回空集
+    if not isEquivalenceRelation(rel):
+        print("The given relation is not an Equivalence Relation")
+        return set([])
+    #如rel是等价关系，实现求划分的程序
+    partitions =set()
+    visited = set()
+    for a in rel.sets:
+        if a not in visited:
+            eq_class = find_equivalence_class(a, rel)
+            partitions.add(frozenset(eq_class))
+            visited.add(a)
+    return partitions
 
