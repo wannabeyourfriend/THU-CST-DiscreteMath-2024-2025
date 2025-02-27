@@ -1,6 +1,6 @@
 # Lab-1
 
-> 离散数学(1)-数理逻辑与集合论`头歌实践教学平台-离散数学实验-国防科大`
+> 离散数学(1)-数理逻辑与集合论`头歌实践教学平台-离散数学实验`
 
 [TOC]
 
@@ -26,7 +26,7 @@ setlab包括两个实验，代码实现在`number.py`和`set.py`两个文件中
 
 ### 1.1 Set
 
-#### Set 简介
+#### Set basic	
 
 Python提供了两种数据类型来建模数学中的集合：
 
@@ -49,7 +49,7 @@ Python提供了两种数据类型来建模数学中的集合：
 
 ![预览大图](https://data.educoder.net/api/attachments/MFlEY3pOeDA1Rm9qQ0s5Uk5QQTdWUT09)
 
-#### Set 底层实现
+#### **Set implementions**
 
 In Python Sets are implemented using a dictionary with dummy variables, where key beings the members set with greater optimizations to the time complexity.
 
@@ -80,7 +80,7 @@ In Python Sets are implemented using a dictionary with dummy variables, where ke
 |   s1 – s2    |       the set of elements in s1 but not s2       |
 |   s1 ˆ s2    | the set of elements in precisely one of s1 or s2 |
 
-#### Set 较难题
+#### Set PAs
 
 > PA1-T3:实现幂集
 
@@ -133,7 +133,7 @@ def DescartesProduct2(list1, list2):
 
 ### 2.2 number
 
-#### $N $的构造
+#### **$N $ constructions**
 
 Peano公理（又称佩亚诺公理）是一组定义自然数及其基本性质的公理系统，通常用于构建算术的基础。它由意大利数学家Giuseppe Peano在1889年提出。Peano公理的目的是从一些最基本的假设出发，推导出自然数的所有性质。
 
@@ -160,9 +160,9 @@ class NaturalNumber(object):
         self.pre = pre
 ```
 
-在代码中实现了自然数的输出、加法、乘法、形式化转换为数字等operation
+在代码`number.py`文件中实现了自然数的输出、加法、乘法、矩阵转换等算子。
 
-#### $\mathbb{N} $同构列的构造
+#### $\mathbb{N} $ Isomorphic Sequences via Functional Operators
 
 实际上，自然数还可以用函数来定义：$n=foldn(zero,succ,n)$,我们称foldn是自然数域上的叠加操作，其中succ是自然数上的函数，n是叠加的次数
 
@@ -186,7 +186,7 @@ def foldn2(init, h):
 
 ## **2 FunctionLab**
 
-### set-map
+#### **max set theory** 
 
 > 在集合论和映射理论中，固定点、不动点以及自映射是重要的基本概念。考虑一个从集合 $A$ 到集合 $A$ 的函数 $f: A \rightarrow A$，我们希望通过该映射寻找一个特殊的子集 $S$，该子集具有某种性质：通过递归过程和逐步移除元素，最终形成一个满足特定映射关系的子集。
 > 
@@ -248,7 +248,7 @@ def mapping(A, f):
     return A
 ```
 
-### Other
+#### selection sort
 
 > 写错好几次的`selectsort`
 
@@ -264,7 +264,11 @@ def SelectSort(seq, i):
     SelectSort(seq, i - 1)
 ```
 
-## 3 RelationLab
+## **3 RelationLab**
+
+### **3.1 Relation modeling**
+
+#### Data structure
 
 这个Lab要求使用**OOP**的编程思想定义集合上的二元关系。回顾关系的定义：对集合$A$和集合$B$，$A \times B$的任意子集称为$A \to B$的一个二元关系$R$。若$<x, y>\in R$,记作$xRy$.我们采用二元序偶来建模关系。
 
@@ -293,9 +297,52 @@ class Relation(object):
 
 ```
 
-实现的功能点：
+#### Function point
 
 - 实现恒等关系$I_{A}$
 - 实现关系的合成运算$R: X \to Y \quad S: Y \to Z$的合成关系为$T = S \circ R: X \to Z$,但在这里，我们在同一个集合$A$上实现关系的合成.
 - 实现关系的幂运算 $ R^n=R∘R⋯∘R \qquad \text{where} \quad n \geq -1$
+
+- 实现关系矩阵
+
+- 判断关系的性质
+
+  - 自反： $$ \forall a \in A, (a, a) \in R $$
+
+  - 反自反：$\forall a \in A, (a, a) \notin R$
+  - 对称：$\forall a, b \in A, \ (a, b) \in R \implies (b, a) \in R$
+  - 反对称：$\forall a, b \in A, \ ((a, b) \in R \land (b, a) \in R) \implies a = b$
+  - 传递：$\forall a, b, c \in A, \ ((a, b) \in R \land (b, c) \in R) \implies (a, c) \in R$
+
+#### **Algorithms** 
+
+##### PA1: Warshall algorithm for transitive closure
+
+**Warshall-Roy算法**
+
+- **Formulation:**
+  $$
+   \begin{aligned}
+   & Step1: A^{(0)} = A\\
+   & Step2: A^{(k)} = A^{(k-1)} \cup (A^{(k-1)}[i][k] \land A^{(k-1)}[k][j])\\
+   & or: a_{ij}^{(k)} = a_{ij}^{(k-1)} \lor (a_{ik}^{(k-1)} \land a_{kj}^{(k-1)})\\
+   & Step3:  A^{(n)}
+  \end{aligned}
+  $$
+
+- **Time complexity:** $\qquad  \mathcal{O}(n^3)$
+
+
+
+
+
+##### PA2: Generate an equivalence relation
+
+
+
+##### PA3: Relation matrix operation operator
+
+
+
+### 3.2 Relational Database Implemention
 
