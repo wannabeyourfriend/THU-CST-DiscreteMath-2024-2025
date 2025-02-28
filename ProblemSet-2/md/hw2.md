@@ -8,7 +8,7 @@
 
 > 写出如图的邻接矩阵、关联矩阵、边列表、正向表
 
-![image-20250226202149012](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250226202149012.png)
+![G_1](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250228085710324.png)
 
 ```python
 import networkx as nx
@@ -79,8 +79,29 @@ nx.draw(DG, with_labels=True, font_weight='bold', node_size=500, node_color='lig
   \end{aligned}
   $$
 
+
+
 ### P14 T17
 
->
+> 判断两图是否同构
+
+![G_2](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250228085908978.png)
+
+图1 $G_1 = (V_1, E_1)$和$G_2= (V_2, E_2)$同构，存在$V_1 \leftrightarrow V_2:f$，$(v_i, v_j) \in G_1 \Leftrightarrow (f(v_i), f(v_j) \in G_2$  
+$$
+f(v1) = b\\
+f(v2) = a\\
+f(v3) = c\\
+f(v4) = e\\
+f(v5) = d\\
+f(v6) = f\\
+$$
 
 ### P14 T21
+
+> 表示一个n个顶点, m条边的非赋权图需要多少存储空间:分别对邻接矩阵\关联矩阵\边列表\正向表进行分析
+
+- 邻接矩阵：需要存储$n^2$的矩阵，每个位置存储一个$bool$值
+-  关联矩阵：需要存储$n \times m$的矩阵，每个位置存储一个$bool$值
+- 边列表：每条边需要维护两个顶点的编号，共m跳变，则需要存储大小为$2m$个顶点编号，顶点编号存储占用的大小因设备而异
+- 正向表：采用一个索引数组A长度为$n$记录每个顶点的邻接列表起始位置，一个后继数组B长度为$m$记录每个顶点的直接后继，则占用空间为$n + m$
