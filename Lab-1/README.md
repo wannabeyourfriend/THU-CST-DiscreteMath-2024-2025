@@ -503,6 +503,12 @@ class Relation(object):
 
 ```
 
+#### 3.1.4 Order Properties of Relations
+
+- 偏序/半序/弱偏序：满足反对称，自反，传递，部分元素之间的关系可以不在其中
+- 拟序/强偏序：非自反、反对称、传递
+- 全序：偏序且要求对所有元素皆可以比较
+
 #### 3.1.3 Algorithms 	
 
 ##### PA1: Warshall algorithm for transitive closure
@@ -562,11 +568,59 @@ def createPartition(rel):
 
 > 给定等价类$[a]_R$，返回集合$A$上的关系$R$
 
-
+```python
+def createEquivalenceRelation(partition, A):
+    #对给定的集合A，以及A上的一个划分partition
+    #生成由该划分决定的等价关系
+    assert functools.reduce(lambda x, y: x.union(y), partition) == A
+    return Relation(A, set([(a,b) for p in partition for a in p for b in p]))
+```
 
 ##### PA4: Relation matrix operation operator
 
-
+- `join`算子
+- `meet`算子
+- `logic_mul`算子
 
 ### 3.2 Relational Database Implemention
+
+#### PA1 Definition
+
+![image-20250301140307987](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250301140307987.png)
+
+#### PA2 Projection
+
+![image-20250301143749179](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250301143749179.png)
+
+```python
+def project(orig_dict, attributes):
+    return {attr: orig_dict[attr] for attr in attributes if attr in orig_dict}
+def PROJECT(orig_rel, attributes):
+    projected_data = [project(tup, attributes) for tup in orig_rel.tuples()]
+    return RelDB(attributes, projected_data)
+```
+
+#### PA3 Selection
+
+![image-20250301144937269](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250301144937269.png)
+
+#### PA4 Join
+
+![image-20250301184248464](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250301184248464.png)
+
+```python
+def JOIN(rel_1, rel_2):
+    assert not(set(rel_1.attributes()) & set(rel_2.attributes()) == set())
+    common_attrs = set(rel_1.attributes()) & set(rel_2.attributes())
+    new_attrs = list(rel_1.attributes()) + [attr for attr in rel_2.attributes() if attr not in common_attrs]
+
+    joined_tuples = set()
+    for t1 in rel_1.tuples():
+        for t2 in rel_2.tuples():
+            if all(t1[attr] == t2[attr] for attr in common_attrs):
+                new_tuple = tuple(t1[attr] for attr in rel_1.attributes()) + tuple(t2[attr] for attr in rel_2.attributes() if attr not in common_attrs)
+                joined_tuples.add(new_tuple)
+    
+    return RelDB(new_attrs, joined_tuples)
+```
 
