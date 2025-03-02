@@ -613,7 +613,6 @@ def JOIN(rel_1, rel_2):
     assert not(set(rel_1.attributes()) & set(rel_2.attributes()) == set())
     common_attrs = set(rel_1.attributes()) & set(rel_2.attributes())
     new_attrs = list(rel_1.attributes()) + [attr for attr in rel_2.attributes() if attr not in common_attrs]
-
     joined_tuples = set()
     for t1 in rel_1.tuples():
         for t2 in rel_2.tuples():
@@ -624,3 +623,26 @@ def JOIN(rel_1, rel_2):
     return RelDB(new_attrs, joined_tuples)
 ```
 
+## **4 LogicLab**
+
+### 4.1 Formulation
+
+按照BNF范式定义命题逻辑合式公式语法元素对应语义对象的建模
+
+```basic
+FOL BNF
+    FORMULA     ::= PROPOSITION
+                 |  '(' FORMULA CONNECTIVE FORMULA ')'
+                 |  'not' FORMULA
+                 |  '(' FORMULA ')'
+                 |  'T'
+                 |  'F'
+    CONNECTIVE  ::= 'implies' | 'equiv' | 'and' | 'or'
+    PROPOSITION ::= [A-Z]-[T, F]\w
+```
+
+![image-20250302170827015](C:\Users\35551\AppData\Roaming\Typora\typora-user-images\image-20250302170827015.png)
+
+### 4.2 命题逻辑编译器
+
+在类命题和基本算子的基础上，利用python中的内置的语义分析包，实现命题逻辑编译器.
