@@ -1,0 +1,66 @@
+Date : 2025-03-11 23:28:40
+Directory : e:\project\离散数学\Lab-1
+Total : 31 files,  2671 codes, 134 comments, 547 blanks, all 3352 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Python   |         23 |      1,702 |        134 |        382 |      2,218 |
+| Markdown |          5 |        563 |          0 |        163 |        726 |
+| JSON     |          3 |        406 |          0 |          2 |        408 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                   | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                      |         31 |      2,671 |        134 |        547 |      3,352 |
+| . (Files)                                                                              |          1 |        512 |          0 |        137 |        649 |
+| 1_WanghaoLab                                                                           |          6 |        429 |         28 |         53 |        510 |
+| 2_LogicLab                                                                             |          6 |        713 |         43 |        164 |        920 |
+| 3_SetLab                                                                               |          2 |         98 |         12 |         16 |        126 |
+| 4_RelationLab                                                                          |         11 |        633 |         40 |        106 |        779 |
+| 4_RelationLab (Files)                                                                  |          6 |        581 |         40 |         80 |        701 |
+| 4_RelationLab\.VSCodeCounter                                                           |          5 |         52 |          0 |         26 |         78 |
+| 4_RelationLab\.VSCodeCounter\2025-03-11_23-28-16                                       |          5 |         52 |          0 |         26 |         78 |
+| 5_FunctionLab                                                                          |          5 |        286 |         11 |         71 |        368 |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                               | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| e:\project\离散数学\Lab-1\1_WanghaoLab\binary_tree.py                                      | Python   |        105 |          1 |         14 |        120 |
+| e:\project\离散数学\Lab-1\1_WanghaoLab\infer.py                                            | Python   |        164 |         16 |         10 |        190 |
+| e:\project\离散数学\Lab-1\1_WanghaoLab\input_proc.py                                       | Python   |         81 |          7 |         15 |        103 |
+| e:\project\离散数学\Lab-1\1_WanghaoLab\main.py                                             | Python   |         36 |          4 |          6 |         46 |
+| e:\project\离散数学\Lab-1\1_WanghaoLab\state.py                                            | Python   |         14 |          0 |          3 |         17 |
+| e:\project\离散数学\Lab-1\1_WanghaoLab\test.py                                             | Python   |         29 |          0 |          5 |         34 |
+| e:\project\离散数学\Lab-1\2_LogicLab\helper.py                                             | Python   |         57 |          8 |         15 |         80 |
+| e:\project\离散数学\Lab-1\2_LogicLab\logic.py                                              | Python   |         20 |          1 |          7 |         28 |
+| e:\project\离散数学\Lab-1\2_LogicLab\propParse.py                                          | Python   |         44 |          0 |          5 |         49 |
+| e:\project\离散数学\Lab-1\2_LogicLab\proposition.py                                        | Python   |        136 |          0 |         54 |        190 |
+| e:\project\离散数学\Lab-1\2_LogicLab\solution.py                                           | Python   |        247 |         34 |         82 |        363 |
+| e:\project\离散数学\Lab-1\2_LogicLab\test.ipynb                                            | JSON     |        209 |          0 |          1 |        210 |
+| e:\project\离散数学\Lab-1\3_SetLab\number.py                                               | Python   |         42 |         12 |         12 |         66 |
+| e:\project\离散数学\Lab-1\3_SetLab\set.py                                                  | Python   |         56 |          0 |          4 |         60 |
+| e:\project\离散数学\Lab-1\4_RelationLab\.VSCodeCounter\2025-03-11_23-28-16\details.md      | Markdown |         15 |          0 |          6 |         21 |
+| e:\project\离散数学\Lab-1\4_RelationLab\.VSCodeCounter\2025-03-11_23-28-16\diff-details.md | Markdown |          9 |          0 |          6 |         15 |
+| e:\project\离散数学\Lab-1\4_RelationLab\.VSCodeCounter\2025-03-11_23-28-16\diff.md         | Markdown |         12 |          0 |          7 |         19 |
+| e:\project\离散数学\Lab-1\4_RelationLab\.VSCodeCounter\2025-03-11_23-28-16\results.json    | JSON     |          1 |          0 |          0 |          1 |
+| e:\project\离散数学\Lab-1\4_RelationLab\.VSCodeCounter\2025-03-11_23-28-16\results.md      | Markdown |         15 |          0 |          7 |         22 |
+| e:\project\离散数学\Lab-1\4_RelationLab\database_methods.py                                | Python   |         45 |          4 |         12 |         61 |
+| e:\project\离散数学\Lab-1\4_RelationLab\relation.py                                        | Python   |        129 |         14 |         19 |        162 |
+| e:\project\离散数学\Lab-1\4_RelationLab\relation_methods.py                                | Python   |         90 |         21 |         18 |        129 |
+| e:\project\离散数学\Lab-1\4_RelationLab\reldatabase.py                                     | Python   |         83 |          1 |         19 |        103 |
+| e:\project\离散数学\Lab-1\4_RelationLab\test.py                                            | Python   |         38 |          0 |         11 |         49 |
+| e:\project\离散数学\Lab-1\4_RelationLab\workload.ipynb                                     | JSON     |        196 |          0 |          1 |        197 |
+| e:\project\离散数学\Lab-1\5_FunctionLab\dp-PA.py                                           | Python   |         65 |          7 |         19 |         91 |
+| e:\project\离散数学\Lab-1\5_FunctionLab\minset.py                                          | Python   |         23 |          0 |          3 |         26 |
+| e:\project\离散数学\Lab-1\5_FunctionLab\recursion-PA1.py                                   | Python   |         47 |          0 |         10 |         57 |
+| e:\project\离散数学\Lab-1\5_FunctionLab\recursion-PA2.py                                   | Python   |         67 |          4 |         13 |         84 |
+| e:\project\离散数学\Lab-1\5_FunctionLab\sort.py                                            | Python   |         84 |          0 |         26 |        110 |
+| e:\project\离散数学\Lab-1\README.md                                                        | Markdown |        512 |          0 |        137 |        649 |
+| Total                                                                                  |          |      2,671 |        134 |        547 |      3,352 |
++----------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
